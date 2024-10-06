@@ -3,8 +3,16 @@ import {
   Background,
   Belt,
   Button,
+  ButtonProject,
+  ButtonSection,
   Container,
-  TechMain
+  ContainerProjects,
+  DetailsSection,
+  ImageSection,
+  ProjectCard,
+  TechMain,
+  TextSection,
+  Title
 } from './style'
 
 import cover from '../../assets/cover.mp4'
@@ -20,6 +28,7 @@ import MongoIcon from '../../assets/mongo-icon.png'
 import NodeIcon from '../../assets/node-icon.png'
 import ReactIcon from '../../assets/react-icon.png'
 import TsIcon from '../../assets/ts-icon.png'
+import ContactsCover from '../../assets/projects/contacts.png'
 
 export function Cover() {
   const [buttonText, setButtonText] = useState('CONTRATE')
@@ -34,6 +43,32 @@ export function Cover() {
     { image: NodeIcon, name: 'Node JS' },
     { image: DockerIcon, name: 'Docker' },
     { image: MongoIcon, name: 'Mongo' }
+  ]
+  const projects = [
+    {
+      title: 'Agenda da contatos',
+      cover: ContactsCover,
+      description:
+        'Este projeto é um CRUD básico que simula uma agenda telefônica, onde é possível cadastrar um novo contato, editar, deletar e visualizar todos os contatos.'
+    },
+    {
+      title: 'Agenda da contatos',
+      cover: ContactsCover,
+      description:
+        'Este projeto é um CRUD básico que simula uma agenda telefônica, onde é possível cadastrar um novo contato, editar, deletar e visualizar todos os contatos.'
+    },
+    {
+      title: 'Agenda da contatos',
+      cover: ContactsCover,
+      description:
+        'Este projeto é um CRUD básico que simula uma agenda telefônica, onde é possível cadastrar um novo contato, editar, deletar e visualizar todos os contatos.'
+    },
+    {
+      title: 'Agenda da contatos',
+      cover: ContactsCover,
+      description:
+        'Este projeto é um CRUD básico que simula uma agenda telefônica, onde é possível cadastrar um novo contato, editar, deletar e visualizar todos os contatos.'
+    }
   ]
 
   return (
@@ -54,50 +89,50 @@ export function Cover() {
       </Background>
 
       <Belt>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
       </Belt>
       <BackBelt>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
-        <h2>Tecnologias •</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
+        <h2>{'< Tecnologias />'}</h2>
       </BackBelt>
 
       <TechMain>
@@ -109,6 +144,31 @@ export function Cover() {
             </div>
           ))}
       </TechMain>
+
+      <ContainerProjects>
+        <Title>
+          <h1>{'< Projetos />'}</h1>
+          <div></div>
+        </Title>
+        {projects &&
+          projects.map((item, index) => (
+            <ProjectCard key={index}>
+              <ImageSection>
+                <img src={item.cover} />
+              </ImageSection>
+              <DetailsSection>
+                <TextSection>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </TextSection>
+                <ButtonSection>
+                  <ButtonProject>Deploy</ButtonProject>
+                  <ButtonProject>Repositório</ButtonProject>
+                </ButtonSection>
+              </DetailsSection>
+            </ProjectCard>
+          ))}
+      </ContainerProjects>
     </>
   )
 }
