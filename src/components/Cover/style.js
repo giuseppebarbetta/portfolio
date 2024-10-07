@@ -46,6 +46,7 @@ export const Background = styled.div`
   overflow-x: hidden;
 
   position: relative;
+  z-index: 0;
 
   video {
     height: 75vh;
@@ -100,26 +101,31 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
 
-  width: 170px;
+  width: 125px;
   height: 35px;
   color: #fefefe;
-  background-color: transparent;
+  background-color: #28a745;
 
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 35px 35px 0 0;
+  z-index: 3;
   overflow: hidden;
 
-  font-size: 17px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
 
-  border-radius: 17px;
-  border: 2px solid #28a745;
+  border-radius: 7px;
+  border: 3px solid #28a745;
 
   transition: all 0.3s ease-in-out;
-  z-index: 1;
+  z-index: 5;
 
   &:hover {
     color: #fefefe;
+    border: 3px solid rgba(82, 82, 82, 0.7);
   }
 
   &::before {
@@ -129,7 +135,7 @@ export const Button = styled.button`
     left: 0;
     width: 0;
     height: 100%;
-    background: #28a745;
+    background: rgba(82, 82, 82, 0.7);
     transition: width 0.4s ease;
     z-index: -1;
   }
@@ -157,7 +163,7 @@ export const Belt = styled.div`
   transform-origin: left center;
   margin-top: 26px;
   position: absolute;
-  z-index: 5;
+  z-index: 4;
 
   h2 {
     animation: ${animationBelt} 2s infinite linear;
@@ -188,7 +194,7 @@ export const BackBelt = styled.div`
   transform-origin: right center;
   margin-top: 53px;
   position: absolute;
-  z-index: 4;
+  z-index: 3;
 
   h2 {
     animation: ${animationBackBelt} 4s infinite linear;
@@ -290,13 +296,14 @@ export const ProjectCard = styled.div`
   width: 620px;
   padding: 17px;
   border-radius: 17px;
-  border-bottom: 5px solid #828282;
 
   background-color: rgba(82, 82, 82, 0.8);
   transition: all ease-in-out;
 
   &:hover {
-    border: none;
+    box-shadow: 10px 10px 5px 0px rgba(225, 225, 225, 0.53);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(225, 225, 225, 0.53);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(225, 225, 225, 0.53);
   }
 `
 
@@ -312,7 +319,7 @@ export const ImageSection = styled.div`
 export const DetailsSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: baseline;
   gap: 17px;
 
@@ -357,5 +364,65 @@ export const ButtonProject = styled.button`
   &:hover {
     border: none;
     background-color: rgba(255, 255, 255, 0.8);
+  }
+`
+
+export const AboutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #010101;
+  padding: 26px;
+`
+export const About = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 35px;
+
+  padding: 26px 0 150px 0;
+
+  p {
+    width: 35%;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  img {
+    width: 260px;
+    border-radius: 100%;
+  }
+
+  button {
+    background-color: transparent;
+    color: #fefefe;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px 35px;
+
+    height: 150px;
+
+    border: 3px solid #828282;
+    border-radius: 50%;
+
+    position: absolute;
+    margin: 0 0 -350px 125px;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #828282;
+      border-radius: 17px;
+      font-weight: bold;
+      border: none;
+    }
   }
 `

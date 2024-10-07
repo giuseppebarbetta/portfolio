@@ -1,4 +1,6 @@
 import {
+  About,
+  AboutContainer,
   BackBelt,
   Background,
   Belt,
@@ -16,6 +18,7 @@ import {
 } from './style'
 
 import cover from '../../assets/cover.mp4'
+import Avatar from '../../assets/avatar.png'
 import { useState } from 'react'
 
 import CssIcon from '../../assets/CssIcon.png'
@@ -73,18 +76,18 @@ export function Cover() {
 
   return (
     <>
+      <Button
+        onMouseEnter={() => setButtonText('Fale comigo 📞')}
+        onMouseLeave={() => setButtonText('CONTRATE')}
+      >
+        {buttonText}
+      </Button>
       <Background>
         <video autoPlay muted loop src={cover} />
         <div></div>
         <Container>
           <h1>Aqui é a capa</h1>
           <span>Aqui vai uma foto</span>
-          <Button
-            onMouseEnter={() => setButtonText('Fale comigo 📞')}
-            onMouseLeave={() => setButtonText('CONTRATE')}
-          >
-            {buttonText}
-          </Button>
         </Container>
       </Background>
 
@@ -169,6 +172,29 @@ export function Cover() {
             </ProjectCard>
           ))}
       </ContainerProjects>
+
+      <AboutContainer>
+        <Title>
+          <h1>{'< Sobre mim />'}</h1>
+          <div></div>
+        </Title>
+        <About>
+          <p>
+            Me chamo Giuseppe e estou migrando da área Contábil para área de
+            Tecnologia, como Desenvolvedor Full Stack, em constante
+            aprimoramento com a criação de projetos acadêmicos e freelancers.
+            Tenho expertise no uso das principais tecnologias como HTML, CSS,
+            versionamento no GIT, JavaScript, React, Node.js. Sou um
+            profissional determinado, persistente e sempre em busca de novos
+            aprendizados, para manter-me atualizado nas melhores práticas do
+            mercado.
+          </p>
+          <div>
+            <img src={Avatar} alt="foto de perfil" />
+            <button>Contrate</button>
+          </div>
+        </About>
+      </AboutContainer>
     </>
   )
 }
