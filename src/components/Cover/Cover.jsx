@@ -1,6 +1,8 @@
 import {
   About,
   AboutContainer,
+  AboutSkillSection,
+  AvatarSection,
   BackBelt,
   Background,
   Belt,
@@ -10,21 +12,35 @@ import {
   Container,
   ContainerProjects,
   DetailsSection,
+  FirstLine,
+  GitButton,
   ImageSection,
   ProjectCard,
+  SecondLine,
+  SkillCard,
+  SkillSection,
+  StarSection,
   TechMain,
   TextSection,
   Title
 } from './style'
 
-import cover from '../../assets/cover.mp4'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
+import StarIcon from '@mui/icons-material/Star'
+import StarBorderIcon from '@mui/icons-material/StarBorder'
+import StarHalfIcon from '@mui/icons-material/StarHalf'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import ArticleIcon from '@mui/icons-material/Article'
+
 import Avatar from '../../assets/avatar.png'
 import { useState } from 'react'
 
 import CssIcon from '../../assets/CssIcon.png'
 import DockerIcon from '../../assets/docker-icon.png'
 import GitIcon from '../../assets/git-icon.png'
-import GitHubIcon from '../../assets/github-icon.png'
+import GithubIcon from '../../assets/github-icon.png'
 import HtmlIcon from '../../assets/html-icon.png'
 import JsIcon from '../../assets/js-icon.png'
 import MongoIcon from '../../assets/mongo-icon.png'
@@ -42,7 +58,7 @@ export function Cover() {
     { image: ReactIcon, name: 'React' },
     { image: TsIcon, name: 'Type Script' },
     { image: GitIcon, name: 'Git' },
-    { image: GitHubIcon, name: 'GitHub' },
+    { image: GithubIcon, name: 'GitHub' },
     { image: NodeIcon, name: 'Node JS' },
     { image: DockerIcon, name: 'Docker' },
     { image: MongoIcon, name: 'Mongo' }
@@ -77,17 +93,31 @@ export function Cover() {
   return (
     <>
       <Button
-        onMouseEnter={() => setButtonText('Fale comigo 📞')}
+        onMouseEnter={() =>
+          setButtonText(
+            <span>
+              Fale Comigo
+              <LocalPhoneOutlinedIcon />
+            </span>
+          )
+        }
         onMouseLeave={() => setButtonText('CONTRATE')}
       >
         {buttonText}
       </Button>
+
       <Background>
-        <video autoPlay muted loop src={cover} />
-        <div></div>
         <Container>
-          <h1>Aqui é a capa</h1>
-          <span>Aqui vai uma foto</span>
+          <h1>Olá mundo 👋 Eu sou o Giuseppe</h1>
+          <FirstLine>
+            <h2>REACT</h2>
+            <GitHubIcon sx={{ fontSize: 100 }} />
+            <LinkedInIcon sx={{ fontSize: 100 }} />
+            <ArticleIcon sx={{ fontSize: 100 }} />
+          </FirstLine>
+          <SecondLine>
+            <h2>DEVELOPER</h2>
+          </SecondLine>
         </Container>
       </Background>
 
@@ -171,6 +201,10 @@ export function Cover() {
               </DetailsSection>
             </ProjectCard>
           ))}
+        <GitButton>
+          Todos projetos
+          <OpenInNewIcon />
+        </GitButton>
       </ContainerProjects>
 
       <AboutContainer>
@@ -179,20 +213,72 @@ export function Cover() {
           <div></div>
         </Title>
         <About>
-          <p>
-            Me chamo Giuseppe e estou migrando da área Contábil para área de
-            Tecnologia, como Desenvolvedor Full Stack, em constante
-            aprimoramento com a criação de projetos acadêmicos e freelancers.
-            Tenho expertise no uso das principais tecnologias como HTML, CSS,
-            versionamento no GIT, JavaScript, React, Node.js. Sou um
-            profissional determinado, persistente e sempre em busca de novos
-            aprendizados, para manter-me atualizado nas melhores práticas do
-            mercado.
-          </p>
-          <div>
+          <AboutSkillSection>
+            <p>
+              Me chamo Giuseppe e estou migrando da área Contábil para área de
+              Tecnologia, como Desenvolvedor Full Stack, em constante
+              aprimoramento com a criação de projetos acadêmicos e freelancers.
+              Tenho expertise no uso das principais tecnologias como HTML, CSS,
+              versionamento no GIT, JavaScript, React, Node.js. Sou um
+              profissional determinado, persistente e sempre em busca de novos
+              aprendizados, para manter-me atualizado nas melhores práticas do
+              mercado.
+            </p>
+
+            <SkillSection>
+              <SkillCard>
+                <h4>Comunicação</h4>
+                <h5>Objetividade e Clareza</h5>
+                <StarSection>
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarHalfIcon />
+                  <StarBorderIcon />
+                </StarSection>
+              </SkillCard>
+
+              <SkillCard>
+                <h4>Trabalho em equipe</h4>
+                <h5>Proatividade e Empatia</h5>
+                <StarSection>
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarHalfIcon />
+                </StarSection>
+              </SkillCard>
+
+              <SkillCard>
+                <h4>Resiliência</h4>
+                <h5>Adaptação e Responsabilidade</h5>
+                <StarSection>
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                </StarSection>
+              </SkillCard>
+
+              <SkillCard>
+                <h4>Aprendizado</h4>
+                <h5>Rápido e Continuo</h5>
+                <StarSection>
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarHalfIcon />
+                  <StarBorderIcon />
+                </StarSection>
+              </SkillCard>
+            </SkillSection>
+          </AboutSkillSection>
+          <AvatarSection>
             <img src={Avatar} alt="foto de perfil" />
             <button>Contrate</button>
-          </div>
+          </AvatarSection>
         </About>
       </AboutContainer>
     </>

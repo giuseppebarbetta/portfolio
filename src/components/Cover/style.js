@@ -45,30 +45,8 @@ export const Background = styled.div`
   max-width: 100vw;
   overflow-x: hidden;
 
+  background-color: #828282;
   position: relative;
-  z-index: 0;
-
-  video {
-    height: 75vh;
-    width: 100vw;
-    object-fit: cover;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
-
-  div {
-    background-color: rgba(0, 0, 0, 0.71);
-    height: 75vh;
-    width: 100%;
-
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-  }
 
   &::after {
     content: '';
@@ -84,15 +62,43 @@ export const Background = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  max-width: 100vw;
-
-  background-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  position: relative;
 
   h1 {
+    font-size: 20px;
+  }
+`
+
+export const FirstLine = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+
+  h2 {
+    font-size: 200px;
+    line-height: 150px;
+    font-weight: bold;
+  }
+
+  button {
     background-color: transparent;
+    border: none;
+  }
+`
+
+export const SecondLine = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  h2 {
+    font-size: 200px;
+    line-height: 150px;
+    font-weight: bold;
   }
 `
 
@@ -101,7 +107,7 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
 
-  width: 125px;
+  width: 140px;
   height: 35px;
   color: #fefefe;
   background-color: #28a745;
@@ -122,6 +128,15 @@ export const Button = styled.button`
 
   transition: all 0.3s ease-in-out;
   z-index: 5;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 15px;
+  }
 
   &:hover {
     color: #fefefe;
@@ -263,7 +278,31 @@ export const ContainerProjects = styled.div`
   border: none;
 `
 
-export const Title = styled.h1`
+export const GitButton = styled.button`
+  width: 70%;
+  height: 53px;
+  margin: 26px 0 35px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background-color: transparent;
+  border: 3px solid rgba(82, 82, 82, 0.8);
+  border-radius: 5px;
+  color: #fefefe;
+  font-size: 20px;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgba(82, 82, 82, 0.8);
+  }
+`
+
+export const Title = styled.div`
   background-color: #010101;
   width: 100%;
   max-width: 100vw;
@@ -301,9 +340,9 @@ export const ProjectCard = styled.div`
   transition: all ease-in-out;
 
   &:hover {
-    box-shadow: 10px 10px 5px 0px rgba(225, 225, 225, 0.53);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(225, 225, 225, 0.53);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(225, 225, 225, 0.53);
+    box-shadow: 10px 12px 16px -4px rgba(225, 225, 225, 0.75);
+    -webkit-box-shadow: 10px 10px 16px -4px rgba(225, 225, 225, 0.75);
+    -moz-box-shadow: 10px 10px 16px -4px rgba(225, 225, 225, 0.75);
   }
 `
 
@@ -376,25 +415,22 @@ export const AboutContainer = styled.div`
   background-color: #010101;
   padding: 26px;
 `
+
 export const About = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  gap: 35px;
+  gap: 5px;
 
-  padding: 26px 0 150px 0;
+  padding: 35px 0 150px 0;
+`
 
-  p {
-    width: 35%;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
+export const AvatarSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
   img {
     width: 260px;
@@ -425,4 +461,63 @@ export const About = styled.div`
       border: none;
     }
   }
+`
+
+export const AboutSkillSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 60vw;
+
+  p {
+    width: 85%;
+  }
+`
+
+export const SkillSection = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  padding: 35px 0 26px 0;
+`
+
+export const SkillCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 240px;
+  height: 125px;
+
+  background-color: rgba(82, 82, 82, 0.8);
+  border-radius: 8px;
+  border: none;
+
+  padding: 26px;
+
+  color: #fefefe;
+
+  h4 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+`
+
+export const StarSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 8px;
 `
