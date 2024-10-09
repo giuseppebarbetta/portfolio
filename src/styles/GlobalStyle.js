@@ -9,6 +9,8 @@ export default createGlobalStyle`
     outline: none;
 
     color: #efefef;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
 
   }
 `

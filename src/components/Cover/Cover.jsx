@@ -9,12 +9,17 @@ import {
   Button,
   ButtonProject,
   ButtonSection,
+  ContactButton,
+  ContactSection,
   Container,
   ContainerProjects,
+  CvStyles,
   DetailsSection,
   FirstLine,
   GitButton,
+  GithubStyles,
   ImageSection,
+  LinkedinStyles,
   ProjectCard,
   SecondLine,
   SkillCard,
@@ -22,6 +27,7 @@ import {
   StarSection,
   TechMain,
   TextSection,
+  ThirdLine,
   Title
 } from './style'
 
@@ -30,9 +36,6 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
 import StarIcon from '@mui/icons-material/Star'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
 import StarHalfIcon from '@mui/icons-material/StarHalf'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import ArticleIcon from '@mui/icons-material/Article'
 
 import Avatar from '../../assets/avatar.png'
 import { useState } from 'react'
@@ -111,13 +114,34 @@ export function Cover() {
           <h1>Olá mundo 👋 Eu sou o Giuseppe</h1>
           <FirstLine>
             <h2>REACT</h2>
-            <GitHubIcon sx={{ fontSize: 100 }} />
-            <LinkedInIcon sx={{ fontSize: 100 }} />
-            <ArticleIcon sx={{ fontSize: 100 }} />
+            <a href="https://github.com/giuseppebarbetta" target="_blank">
+              <GithubStyles />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/giuseppebarbetta/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedinStyles />
+            </a>
+            <a
+              href="/src/assets/curriculum/CV.pdf"
+              download={'CV Giuseppe frontend'}
+            >
+              <CvStyles />
+            </a>
           </FirstLine>
           <SecondLine>
             <h2>DEVELOPER</h2>
           </SecondLine>
+          <ThirdLine>
+            <p>Tenho 29 anos e estou como desenvolvedor frontend freelancer</p>
+            <p>
+              com experiência de 10 meses desenvolvendo projetos e resolvendo
+              problemas
+            </p>
+            <p>através da tecnologia</p>
+          </ThirdLine>
         </Container>
       </Background>
 
@@ -216,13 +240,13 @@ export function Cover() {
           <AboutSkillSection>
             <p>
               Me chamo Giuseppe e estou migrando da área Contábil para área de
-              Tecnologia, como Desenvolvedor Full Stack, em constante
-              aprimoramento com a criação de projetos acadêmicos e freelancers.
-              Tenho expertise no uso das principais tecnologias como HTML, CSS,
-              versionamento no GIT, JavaScript, React, Node.js. Sou um
-              profissional determinado, persistente e sempre em busca de novos
-              aprendizados, para manter-me atualizado nas melhores práticas do
-              mercado.
+              https://github.com/giuseppebarbettao Desenvolvedor Full Stack, em
+              constante aprimoramento com a criação de projetos acadêmicos e
+              freelancers. Tenho expertise no uso das principais tecnologias
+              como HTML, CSS, versionamento no GIT, JavaScript, React, Node.js.
+              Sou um profissional determinado, persistente e sempre em busca de
+              novos aprendizados, para manter-me atualizado nas melhores
+              práticas do mercado.
             </p>
 
             <SkillSection>
@@ -233,7 +257,7 @@ export function Cover() {
                   <StarIcon />
                   <StarIcon />
                   <StarIcon />
-                  <StarHalfIcon />
+                  <StarIcon />
                   <StarBorderIcon />
                 </StarSection>
               </SkillCard>
@@ -281,6 +305,17 @@ export function Cover() {
           </AvatarSection>
         </About>
       </AboutContainer>
+
+      <ContactSection>
+        <Title>
+          <h1>{'< Contato />'}</h1>
+          <div></div>
+        </Title>
+        <ContactButton href="https://google.com" target="_blank">
+          <LinkedinStyles />
+          <p>LinkedIn</p>
+        </ContactButton>
+      </ContactSection>
     </>
   )
 }

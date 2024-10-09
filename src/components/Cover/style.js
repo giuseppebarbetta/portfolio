@@ -1,4 +1,7 @@
 import styled, { keyframes } from 'styled-components'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import ArticleIcon from '@mui/icons-material/Article'
 
 const animationBelt = keyframes`
   from {
@@ -18,7 +21,7 @@ const animationBackBelt = keyframes`
   }
 `
 
-const animationTech = keyframes`
+const animationLeft = keyframes`
   from {
     transform: translateX(-100%);
   }
@@ -27,12 +30,42 @@ const animationTech = keyframes`
   }
 `
 
-const animationTitleTech = keyframes`
+const animationRight = keyframes`
   from {
     transform: translateX(100%);
   }
   to {
     transform: translateX(0);
+  }
+`
+
+export const CvStyles = styled(ArticleIcon)`
+  font-size: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-20px);
+  }
+`
+
+export const LinkedinStyles = styled(LinkedInIcon)`
+  font-size: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-20px);
+  }
+`
+
+export const GithubStyles = styled(GitHubIcon)`
+  font-size: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-20px);
   }
 `
 
@@ -45,7 +78,12 @@ export const Background = styled.div`
   max-width: 100vw;
   overflow-x: hidden;
 
-  background-color: #828282;
+  background: rgb(84, 212, 32);
+  background: radial-gradient(
+    circle,
+    rgba(84, 212, 32, 0.8015581232492998) 0%,
+    rgba(130, 130, 130, 1) 53%
+  );
   position: relative;
 
   &::after {
@@ -69,24 +107,29 @@ export const Container = styled.div`
 
   h1 {
     font-size: 20px;
+    padding-left: 10px;
+    animation: ${animationLeft} 0.8s linear;
   }
 `
 
 export const FirstLine = styled.div`
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
+
+  a {
+    cursor: pointer;
+  }
 
   h2 {
     font-size: 200px;
     line-height: 150px;
     font-weight: bold;
-  }
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
 
-  button {
-    background-color: transparent;
-    border: none;
+    margin-right: 17px;
   }
 `
 
@@ -95,11 +138,26 @@ export const SecondLine = styled.div`
   justify-content: flex-start;
   align-items: center;
 
+  margin-bottom: 8px;
+
   h2 {
     font-size: 200px;
     line-height: 150px;
     font-weight: bold;
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
   }
+`
+
+export const ThirdLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  color: #fefefe;
+
+  width: 100%;
 `
 
 export const Button = styled.button`
@@ -109,8 +167,8 @@ export const Button = styled.button`
 
   width: 140px;
   height: 35px;
-  color: #fefefe;
-  background-color: #28a745;
+  color: #010101;
+  background-color: #35fb00;
 
   position: fixed;
   top: 0;
@@ -124,7 +182,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   border-radius: 7px;
-  border: 3px solid #28a745;
+  border: 3px solid #35fb00;
 
   transition: all 0.3s ease-in-out;
   z-index: 5;
@@ -249,7 +307,7 @@ export const TechMain = styled.div`
 
     transform: scale(1);
     transition: all 0.5 ease-in-out;
-    animation: ${animationTech} 1s linear;
+    animation: ${animationLeft} 1s linear;
 
     &:hover {
       transform: scale(1.1);
@@ -258,7 +316,7 @@ export const TechMain = styled.div`
 
   h2 {
     font-size: 17px;
-    animation: ${animationTitleTech} 1s linear;
+    animation: ${animationRight} 1s linear;
   }
 `
 
@@ -343,6 +401,7 @@ export const ProjectCard = styled.div`
     box-shadow: 10px 12px 16px -4px rgba(225, 225, 225, 0.75);
     -webkit-box-shadow: 10px 10px 16px -4px rgba(225, 225, 225, 0.75);
     -moz-box-shadow: 10px 10px 16px -4px rgba(225, 225, 225, 0.75);
+    transform: translateX(10px);
   }
 `
 
@@ -398,7 +457,7 @@ export const ButtonProject = styled.button`
   font-weight: bold;
 
   cursor: pointer;
-  border-bottom: 3px solid #28a745;
+  border-bottom: 3px solid #35fb00;
 
   &:hover {
     border: none;
@@ -472,7 +531,7 @@ export const AboutSkillSection = styled.div`
   width: 60vw;
 
   p {
-    width: 85%;
+    width: 80%;
   }
 `
 
@@ -485,7 +544,7 @@ export const SkillSection = styled.div`
   justify-content: center;
   align-items: center;
 
-  gap: 10px;
+  gap: 17px;
   padding: 35px 0 26px 0;
 `
 
@@ -496,14 +555,12 @@ export const SkillCard = styled.div`
   align-items: center;
   gap: 10px;
 
-  width: 240px;
+  width: 220px;
   height: 125px;
 
   background-color: rgba(82, 82, 82, 0.8);
   border-radius: 8px;
   border: none;
-
-  padding: 26px;
 
   color: #fefefe;
 
@@ -520,4 +577,27 @@ export const StarSection = styled.div`
   justify-content: center;
 
   margin-top: 8px;
+`
+
+export const ContactSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+
+  background-color: #010101;
+  padding: 17px 0 53px 0;
+  gap: 10px;
+`
+
+export const ContactButton = styled.a`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+
+  width: 260px;
+  height: 120px;
+
+  cursor: pointer;
 `
