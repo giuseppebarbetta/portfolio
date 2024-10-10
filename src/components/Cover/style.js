@@ -1,7 +1,4 @@
 import styled, { keyframes } from 'styled-components'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import ArticleIcon from '@mui/icons-material/Article'
 
 const animationBelt = keyframes`
   from {
@@ -36,36 +33,6 @@ const animationRight = keyframes`
   }
   to {
     transform: translateX(0);
-  }
-`
-
-export const CvStyles = styled(ArticleIcon)`
-  font-size: 100px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    transform: translateY(-20px);
-  }
-`
-
-export const LinkedinStyles = styled(LinkedInIcon)`
-  font-size: 100px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    transform: translateY(-20px);
-  }
-`
-
-export const GithubStyles = styled(GitHubIcon)`
-  font-size: 100px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    transform: translateY(-20px);
   }
 `
 
@@ -112,19 +79,23 @@ export const Container = styled.div`
   }
 `
 
-export const FirstLine = styled.div`
+export const ContainerIcons = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+`
+
+export const FirstLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space;
   gap: 10px;
 
-  a {
-    cursor: pointer;
-  }
-
   h2 {
-    font-size: 200px;
-    line-height: 150px;
+    font-size: 125px;
+    line-height: 90px;
     font-weight: bold;
     font-family: 'Archivo Black', sans-serif;
     font-weight: 400;
@@ -135,14 +106,21 @@ export const FirstLine = styled.div`
 
 export const SecondLine = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-between;
+  align-items: end;
+  align-self: flex-end;
+
+  width: 72vw;
 
   margin-bottom: 8px;
 
+  a {
+    cursor: pointer;
+  }
+
   h2 {
-    font-size: 200px;
-    line-height: 150px;
+    font-size: 125px;
+    line-height: 100px;
     font-weight: bold;
     font-family: 'Archivo Black', sans-serif;
     font-weight: 400;
@@ -336,7 +314,7 @@ export const ContainerProjects = styled.div`
   border: none;
 `
 
-export const GitButton = styled.button`
+export const GitButton = styled.a`
   width: 70%;
   height: 53px;
   margin: 26px 0 35px 0;
@@ -353,6 +331,7 @@ export const GitButton = styled.button`
   font-size: 20px;
 
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -481,7 +460,7 @@ export const About = styled.div`
   align-items: center;
   gap: 5px;
 
-  padding: 35px 0 150px 0;
+  padding: 35px 0 62px 0;
 `
 
 export const AvatarSection = styled.div`
@@ -582,12 +561,139 @@ export const StarSection = styled.div`
 export const ContactSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: end;
+  justify-content: space-between;
+  align-items: center;
 
+  height: 100%;
   background-color: #010101;
   padding: 17px 0 53px 0;
   gap: 10px;
+`
+
+export const ContainerContact = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: 70vw;
+  height: 530px;
+  margin: 26px 0;
+  padding: 53px 20px;
+
+  border: 1px solid #828282;
+  border-radius: 8px;
+
+  h4 {
+    font-size: 35px;
+    margin-bottom: 26px;
+  }
+
+  .topBackground {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 17px;
+
+    height: 26px;
+    width: 100%;
+    background-color: #35fb00;
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    p {
+      color: #010101;
+      font-weight: 700;
+    }
+  }
+`
+
+export const BackgroundInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  position: relative;
+
+  width: 25vw;
+  height: 100%;
+
+  border: 1px solid #828282;
+  border-radius: 8px;
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .middleBackground {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 17px;
+
+    height: 26px;
+    width: 100%;
+    background-color: #20a3f9;
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    p {
+      color: #010101;
+      font-weight: 700;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateX(8px);
+    }
+  }
+
+  p {
+    color: #99fb00;
+    height: 8px;
+  }
+`
+
+export const InfoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+`
+
+export const ContactIcons = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-left: 26px;
+
+  gap: 15px;
 `
 
 export const ContactButton = styled.a`
@@ -596,8 +702,15 @@ export const ContactButton = styled.a`
   justify-content: start;
   align-items: center;
 
-  width: 260px;
-  height: 120px;
+  gap: 10px;
+
+  width: 170px;
+  height: 60px;
 
   cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translate(10px, -10px);
+  }
 `

@@ -5,21 +5,23 @@ import {
   AvatarSection,
   BackBelt,
   Background,
+  BackgroundInfo,
   Belt,
   Button,
   ButtonProject,
   ButtonSection,
   ContactButton,
+  ContactIcons,
   ContactSection,
   Container,
+  ContainerContact,
+  ContainerIcons,
   ContainerProjects,
-  CvStyles,
   DetailsSection,
   FirstLine,
   GitButton,
-  GithubStyles,
   ImageSection,
-  LinkedinStyles,
+  InfoContainer,
   ProjectCard,
   SecondLine,
   SkillCard,
@@ -36,6 +38,7 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
 import StarIcon from '@mui/icons-material/Star'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
 import StarHalfIcon from '@mui/icons-material/StarHalf'
+import TouchAppIcon from '@mui/icons-material/TouchApp'
 
 import Avatar from '../../assets/avatar.png'
 import { useState } from 'react'
@@ -51,8 +54,11 @@ import NodeIcon from '../../assets/node-icon.png'
 import ReactIcon from '../../assets/react-icon.png'
 import TsIcon from '../../assets/ts-icon.png'
 import ContactsCover from '../../assets/projects/contacts.png'
+import { CvIcon, GitHubIcon, LinkedInIcon } from '../ContactIcons/ContactIcons'
 
 export function Cover() {
+  const email = 'giuseppebarbetta@outlook.com'
+  const [copiedText, setCopiedText] = useState('')
   const [buttonText, setButtonText] = useState('CONTRATE')
   const techImages = [
     { image: HtmlIcon, name: 'HTML' },
@@ -93,6 +99,21 @@ export function Cover() {
     }
   ]
 
+  const copyToClipBoard = () => {
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        setCopiedText('Email Copiado!')
+
+        setTimeout(() => {
+          setCopiedText('')
+        }, 2000)
+      })
+      .catch((err) => {
+        console.error(`Erro ao copiar o texto:`, err)
+      })
+  }
+
   return (
     <>
       <Button
@@ -113,26 +134,15 @@ export function Cover() {
         <Container>
           <h1>Olá mundo 👋 Eu sou o Giuseppe</h1>
           <FirstLine>
-            <h2>REACT</h2>
-            <a href="https://github.com/giuseppebarbetta" target="_blank">
-              <GithubStyles />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/giuseppebarbetta/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedinStyles />
-            </a>
-            <a
-              href="/src/assets/curriculum/CV.pdf"
-              download={'CV Giuseppe frontend'}
-            >
-              <CvStyles />
-            </a>
+            <h2>DESENVOLVEDOR</h2>
           </FirstLine>
           <SecondLine>
-            <h2>DEVELOPER</h2>
+            <ContainerIcons>
+              <GitHubIcon animation size={100} />
+              <LinkedInIcon animation size={100} />
+              <CvIcon animation size={100} />
+            </ContainerIcons>
+            <h2>FRONTEND</h2>
           </SecondLine>
           <ThirdLine>
             <p>Tenho 29 anos e estou como desenvolvedor frontend freelancer</p>
@@ -225,7 +235,7 @@ export function Cover() {
               </DetailsSection>
             </ProjectCard>
           ))}
-        <GitButton>
+        <GitButton href="https://github.com/giuseppebarbetta" target="_blank">
           Todos projetos
           <OpenInNewIcon />
         </GitButton>
@@ -311,10 +321,51 @@ export function Cover() {
           <h1>{'< Contato />'}</h1>
           <div></div>
         </Title>
-        <ContactButton href="https://google.com" target="_blank">
-          <LinkedinStyles />
-          <p>LinkedIn</p>
-        </ContactButton>
+        <ContainerContact>
+          <span className="topBackground">
+            <p>• • •</p>
+            <p>X</p>
+          </span>
+          <h4>Dúvidas e mais informações:</h4>
+          <InfoContainer>
+            <BackgroundInfo>
+              <span className="middleBackground">
+                <p>• • •</p>
+                <p>X</p>
+              </span>
+              <button onClick={copyToClipBoard}>
+                giuseppebarbetta@outlook.com
+                <TouchAppIcon />
+              </button>
+              <p>{copiedText}</p>
+            </BackgroundInfo>
+            <ContactIcons>
+              <ContactButton
+                href="https://www.linkedin.com/in/giuseppebarbetta/"
+                target="_blank"
+              >
+                <LinkedInIcon />
+                <p>LinkedIn</p>
+              </ContactButton>
+
+              <ContactButton
+                href="https://github.com/giuseppebarbetta"
+                target="_blank"
+              >
+                <GitHubIcon />
+                <p>Github</p>
+              </ContactButton>
+
+              <ContactButton
+                href="/src/assets/curriculum/CV.pdf"
+                download={'CV Giuseppe frontend'}
+              >
+                <CvIcon />
+                <p>Currículo</p>
+              </ContactButton>
+            </ContactIcons>
+          </InfoContainer>
+        </ContainerContact>
       </ContactSection>
     </>
   )
