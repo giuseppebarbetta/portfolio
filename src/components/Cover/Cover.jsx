@@ -27,10 +27,8 @@ import {
   SkillCard,
   SkillSection,
   StarSection,
-  TechMain,
   TextSection,
-  ThirdLine,
-  Title
+  ThirdLine
 } from './style'
 
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
@@ -43,35 +41,16 @@ import TouchAppIcon from '@mui/icons-material/TouchApp'
 import Avatar from '../../assets/avatar.png'
 import { useState } from 'react'
 
-import CssIcon from '../../assets/CssIcon.png'
-import DockerIcon from '../../assets/docker-icon.png'
-import GitIcon from '../../assets/git-icon.png'
-import GithubIcon from '../../assets/github-icon.png'
-import HtmlIcon from '../../assets/html-icon.png'
-import JsIcon from '../../assets/js-icon.png'
-import MongoIcon from '../../assets/mongo-icon.png'
-import NodeIcon from '../../assets/node-icon.png'
-import ReactIcon from '../../assets/react-icon.png'
-import TsIcon from '../../assets/ts-icon.png'
 import ContactsCover from '../../assets/projects/contacts.png'
 import { CvIcon, GitHubIcon, LinkedInIcon } from '../ContactIcons/ContactIcons'
+import { TitleText } from '../../utils/Titles/TitleText'
+import { TechSection } from '../TechSection/TechSection'
 
 export function Cover() {
   const email = 'giuseppebarbetta@outlook.com'
   const [copiedText, setCopiedText] = useState('')
   const [buttonText, setButtonText] = useState('CONTRATE')
-  const techImages = [
-    { image: HtmlIcon, name: 'HTML' },
-    { image: CssIcon, name: 'CSS' },
-    { image: JsIcon, name: 'Java Script' },
-    { image: ReactIcon, name: 'React' },
-    { image: TsIcon, name: 'Type Script' },
-    { image: GitIcon, name: 'Git' },
-    { image: GithubIcon, name: 'GitHub' },
-    { image: NodeIcon, name: 'Node JS' },
-    { image: DockerIcon, name: 'Docker' },
-    { image: MongoIcon, name: 'Mongo' }
-  ]
+
   const projects = [
     {
       title: 'Agenda da contatos',
@@ -116,6 +95,7 @@ export function Cover() {
 
   return (
     <>
+      {/* Componente principal que é a capa */}
       <Button
         onMouseEnter={() =>
           setButtonText(
@@ -155,6 +135,7 @@ export function Cover() {
         </Container>
       </Background>
 
+      {/* Ainda falta enviar para o componente da seção de tecnologia */}
       <Belt>
         <h2>{'< Tecnologias />'}</h2>
         <h2>{'< Tecnologias />'}</h2>
@@ -202,21 +183,12 @@ export function Cover() {
         <h2>{'< Tecnologias />'}</h2>
       </BackBelt>
 
-      <TechMain>
-        {techImages &&
-          techImages.map((item, index) => (
-            <div key={index}>
-              <img src={item?.image} alt={`${item?.name} icone`} />
-              <h2>{item?.name}</h2>
-            </div>
-          ))}
-      </TechMain>
+      {/* Componente seção tecnologia */}
+      <TechSection />
 
+      {/* Componentizar e finalizar seção de projetos */}
       <ContainerProjects>
-        <Title>
-          <h1>{'< Projetos />'}</h1>
-          <div></div>
-        </Title>
+        <TitleText text={'Projetos'} />
         {projects &&
           projects.map((item, index) => (
             <ProjectCard key={index}>
@@ -241,22 +213,20 @@ export function Cover() {
         </GitButton>
       </ContainerProjects>
 
+      {/* Componentizar e finalizar seção de sobre */}
       <AboutContainer>
-        <Title>
-          <h1>{'< Sobre mim />'}</h1>
-          <div></div>
-        </Title>
+        <TitleText text={'Sobre Mim'} />
         <About>
           <AboutSkillSection>
             <p>
               Me chamo Giuseppe e estou migrando da área Contábil para área de
-              https://github.com/giuseppebarbettao Desenvolvedor Full Stack, em
-              constante aprimoramento com a criação de projetos acadêmicos e
-              freelancers. Tenho expertise no uso das principais tecnologias
-              como HTML, CSS, versionamento no GIT, JavaScript, React, Node.js.
-              Sou um profissional determinado, persistente e sempre em busca de
-              novos aprendizados, para manter-me atualizado nas melhores
-              práticas do mercado.
+              tecnologia como Desenvolvedor Full Stack, em constante
+              aprimoramento com a criação de projetos acadêmicos e freelancers.
+              Tenho expertise no uso das principais tecnologias como HTML, CSS,
+              versionamento no GIT, JavaScript, React, Node.js. Sou um
+              profissional determinado, persistente e sempre em busca de novos
+              aprendizados, para manter-me atualizado nas melhores práticas do
+              mercado.
             </p>
 
             <SkillSection>
@@ -316,11 +286,9 @@ export function Cover() {
         </About>
       </AboutContainer>
 
+      {/* Componentizar seção de contatos */}
       <ContactSection>
-        <Title>
-          <h1>{'< Contato />'}</h1>
-          <div></div>
-        </Title>
+        <TitleText text={'Contato'} />
         <ContainerContact>
           <span className="topBackground">
             <p>• • •</p>

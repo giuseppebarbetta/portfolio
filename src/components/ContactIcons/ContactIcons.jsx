@@ -1,7 +1,7 @@
 import { CvStyles, GithubStyles, LinkedinStyles } from './style'
 import PropTypes from 'prop-types'
 
-export function GitHubIcon({ size, animation }) {
+export function GitHubIcon({ size = 50, animation }) {
   return (
     <a href="https://github.com/giuseppebarbetta" target="_blank">
       <GithubStyles animation={animation} size={size} />
@@ -9,22 +9,22 @@ export function GitHubIcon({ size, animation }) {
   )
 }
 
-export function LinkedInIcon({ size, animation }) {
+export function LinkedInIcon({ size = 50, animation }) {
   return (
     <a
       href="https://www.linkedin.com/in/giuseppebarbetta/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <LinkedinStyles animation={animation} style={{ fontSize: size }} />
+      <LinkedinStyles animation={animation} size={size} />
     </a>
   )
 }
 
-export function CvIcon({ size, animation }) {
+export function CvIcon({ size = 50, animation }) {
   return (
     <a href="/src/assets/curriculum/CV.pdf" download={'CV Giuseppe frontend'}>
-      <CvStyles animation={animation} style={{ fontSize: size }} />
+      <CvStyles animation={animation} size={size} />
     </a>
   )
 }
@@ -40,14 +40,4 @@ LinkedInIcon.propTypes = {
 CvIcon.propTypes = {
   size: PropTypes.number,
   animation: PropTypes.bool
-}
-
-GitHubIcon.defaultProps = {
-  size: 50
-}
-LinkedInIcon.defaultProps = {
-  size: 50
-}
-CvIcon.defaultProps = {
-  size: 50
 }

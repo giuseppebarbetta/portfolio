@@ -27,15 +27,6 @@ const animationLeft = keyframes`
   }
 `
 
-const animationRight = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`
-
 export const Background = styled.div`
   display: flex;
   align-items: center;
@@ -72,6 +63,8 @@ export const Container = styled.div`
   align-items: start;
   position: relative;
 
+  width: 65vw;
+
   h1 {
     font-size: 20px;
     padding-left: 10px;
@@ -90,7 +83,7 @@ export const FirstLine = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: space;
+  align-items: start;
   gap: 10px;
 
   h2 {
@@ -107,10 +100,9 @@ export const FirstLine = styled.div`
 export const SecondLine = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  align-self: flex-end;
+  align-items: start;
 
-  width: 72vw;
+  width: 65vw;
 
   margin-bottom: 8px;
 
@@ -161,6 +153,9 @@ export const Button = styled.button`
 
   border-radius: 7px;
   border: 3px solid #35fb00;
+  box-shadow: 1px 1px 34px 2px rgba(152, 232, 159, 0.7);
+  -webkit-box-shadow: 1px 1px 34px 2px rgba(152, 232, 159, 0.7);
+  -moz-box-shadow: 1px 1px 34px 2px rgba(152, 232, 159, 0.7);
 
   transition: all 0.3s ease-in-out;
   z-index: 5;
@@ -256,48 +251,6 @@ export const BackBelt = styled.div`
   }
 `
 
-export const TechMain = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 17px;
-
-  width: 100%;
-
-  background-color: #010101;
-  padding: 117px 0 53px 0;
-
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  img {
-    height: 71px;
-    border-radius: 17px;
-
-    transform: scale(1);
-    transition: all 0.5 ease-in-out;
-    animation: ${animationLeft} 1s linear;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-
-  h2 {
-    font-size: 17px;
-    animation: ${animationRight} 1s linear;
-  }
-`
-
 export const ContainerProjects = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -336,30 +289,6 @@ export const GitButton = styled.a`
 
   &:hover {
     background-color: rgba(82, 82, 82, 0.8);
-  }
-`
-
-export const Title = styled.div`
-  background-color: #010101;
-  width: 100%;
-  max-width: 100vw;
-
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 26px;
-
-  h1 {
-    color: #fefefe;
-    font-size: 35px;
-    font-weight: bold;
-    text-shadow: 5px 3px 2px rgba(40, 167, 69, 0.7);
-
-    width: 620px;
-  }
-
-  div {
-    width: 620px;
   }
 `
 
