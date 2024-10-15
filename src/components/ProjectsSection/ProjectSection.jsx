@@ -1,4 +1,10 @@
 import ContactsCover from '../../assets/projects/contacts.png'
+import ToDoListCover from '../../assets/projects/toDoList.png'
+import DevMoviesCover from '../../assets/projects/devMovies.png'
+import AlbumInstaCover from '../../assets/projects/albumInsta.png'
+import MenuOnlineCover from '../../assets/projects/menuOnline.png'
+import ClimaTempoCover from '../../assets/projects/climaTempo.png'
+
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import {
   ButtonProject,
@@ -18,27 +24,52 @@ export function ProjectSection() {
       title: 'Agenda da contatos',
       cover: ContactsCover,
       description:
-        'Este projeto é um CRUD básico que simula uma agenda telefônica, onde é possível cadastrar um novo contato, editar, deletar e visualizar todos os contatos.'
+        'Este projeto é um CRUD básico que simula uma agenda telefônica, onde é possível cadastrar um novo contato, editar, deletar e visualizar todos os contatos.',
+      deploy: 'https://contacts-front.netlify.app/',
+      repository: 'https://github.com/giuseppebarbetta/contacts-front'
     },
     {
-      title: 'Agenda da contatos',
-      cover: ContactsCover,
+      title: 'Dev Movies',
+      cover: DevMoviesCover,
       description:
-        'Este projeto é um CRUD básico que simula uma agenda telefônica, onde é possível cadastrar um novo contato, editar, deletar e visualizar todos os contatos.'
+        'Filmes on demand, baseado em streamings consumindo uma API criada em Mongo db para uma maior solidez e praticidade.',
+      deploy: 'https://devflix-movies-app.netlify.app/',
+      repository: 'https://github.com/giuseppebarbetta/dev-movies'
     },
     {
-      title: 'Agenda da contatos',
-      cover: ContactsCover,
+      title: 'Cardápio Online',
+      cover: MenuOnlineCover,
       description:
-        'Este projeto é um CRUD básico que simula uma agenda telefônica, onde é possível cadastrar um novo contato, editar, deletar e visualizar todos os contatos.'
+        'Cardápio online para hamburgueria interativo e com diversas funções.',
+      deploy: 'https://delivery-menu-lyart.vercel.app/',
+      repository: 'https://github.com/giuseppebarbetta/delivery-menu'
     },
     {
-      title: 'Agenda da contatos',
-      cover: ContactsCover,
+      title: 'Instagram Album',
+      cover: AlbumInstaCover,
       description:
-        'Este projeto é um CRUD básico que simula uma agenda telefônica, onde é possível cadastrar um novo contato, editar, deletar e visualizar todos os contatos.'
+        'Cópia simples do Instagram com consumo de imagens via API e modo "dark/light".',
+      deploy: 'https://insta-album-api.netlify.app/',
+      repository: 'https://github.com/giuseppebarbetta/insta-album-api'
+    },
+    {
+      title: 'Lista de Tarefas',
+      cover: ToDoListCover,
+      description:
+        'O Fomoso to do list (lista de tarfas), onde você pode incluir, editar e excluir suas tarefas do dia.',
+      deploy: 'https://todolist-interface.netlify.app/',
+      repository: 'https://github.com/giuseppebarbetta/to-do-list'
+    },
+    {
+      title: 'Clima Tempo',
+      cover: ClimaTempoCover,
+      description:
+        'Projeto interativo para previsão do tempo, consumindo API em tempo real com estilizações condicionais.',
+      deploy: 'https://weather-assistent.netlify.app/',
+      repository: 'https://github.com/giuseppebarbetta/weather-assistent'
     }
   ]
+
   return (
     <ContainerProjects>
       <TitleText text={'Projetos'} />
@@ -54,8 +85,12 @@ export function ProjectSection() {
                 <p>{item.description}</p>
               </TextSection>
               <ButtonSection>
-                <ButtonProject>Deploy</ButtonProject>
-                <ButtonProject>Repositório</ButtonProject>
+                <ButtonProject href={item.deploy} target="_blank">
+                  Deploy
+                </ButtonProject>
+                <ButtonProject href={item.repository} target="_blank">
+                  Repositório
+                </ButtonProject>
               </ButtonSection>
             </DetailsSection>
           </ProjectCard>

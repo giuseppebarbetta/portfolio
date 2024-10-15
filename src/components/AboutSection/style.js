@@ -44,7 +44,7 @@ export const AvatarSection = styled.div`
     border-radius: 50%;
 
     position: absolute;
-    margin: 0 0 -350px 125px;
+    margin: 0 0 -260px 240px;
 
     transition: all 0.3s ease-in-out;
 
@@ -67,6 +67,8 @@ export const AboutSkillSection = styled.div`
 
   p {
     width: 80%;
+    font-size: 19px;
+    line-height: 22px;
   }
 `
 

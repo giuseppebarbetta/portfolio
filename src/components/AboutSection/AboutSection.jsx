@@ -24,13 +24,13 @@ export function AboutSection() {
       <About>
         <AboutSkillSection>
           <p>
-            Me chamo Giuseppe e estou migrando da área Contábil para área de
-            tecnologia como Desenvolvedor Full Stack, em constante aprimoramento
-            com a criação de projetos acadêmicos e freelancers. Tenho expertise
-            no uso das principais tecnologias como HTML, CSS, versionamento no
-            GIT, JavaScript, React, Node.js. Sou um profissional determinado,
-            persistente e sempre em busca de novos aprendizados, para manter-me
-            atualizado nas melhores práticas do mercado.
+            Migrei a 1 ano para área de tecnologia como Desenvolvedor Full
+            Stack, com enfâse no Front end, tendo expertise no uso das
+            principais tecnologias como HTML, CSS, JavaScript, React,
+            versionamento no GIT, Node.js. Em constante aprimoramento com a
+            criação de projetos acadêmicos e freelancers. Sou um profissional
+            determinado, persistente e sempre em busca de novos aprendizados,
+            para manter-me atualizado nas melhores práticas do mercado.
           </p>
 
           <SkillSection>

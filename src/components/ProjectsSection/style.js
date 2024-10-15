@@ -48,6 +48,7 @@ export const ProjectCard = styled.div`
   gap: 17px;
 
   width: 620px;
+  height: 220px;
   padding: 17px;
   border-radius: 17px;
 
@@ -67,6 +68,7 @@ export const ImageSection = styled.div`
 
   img {
     width: 280px;
+    height: 190px;
     border-radius: 17px;
   }
 `
@@ -100,10 +102,13 @@ export const ButtonSection = styled.div`
   gap: 17px;
 `
 
-export const ButtonProject = styled.button`
+export const ButtonProject = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.9);
 
   width: 110px;
   padding: 8px 0;
@@ -118,6 +123,6 @@ export const ButtonProject = styled.button`
 
   &:hover {
     border: none;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #fefefe;
   }
 `
