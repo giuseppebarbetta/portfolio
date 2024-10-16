@@ -27,6 +27,10 @@ export const ContainerContact = styled.div`
   border: 1px solid #828282;
   border-radius: 8px;
 
+  @media (max-width: 880px) {
+    width: 85vw;
+  }
+
   h4 {
     font-size: 35px;
     margin-bottom: 26px;
@@ -68,6 +72,10 @@ export const BackgroundInfo = styled.div`
 
   border: 1px solid #828282;
   border-radius: 8px;
+
+  @media (max-width: 1025px) {
+    width: 40vw;
+  }
 
   h4 {
     font-size: 20px;
@@ -112,6 +120,10 @@ export const BackgroundInfo = styled.div`
     &:hover {
       transform: translateX(8px);
     }
+
+    @media (max-width: 1350px) {
+      font-size: 15px;
+    }
   }
 
   p {
@@ -122,7 +134,7 @@ export const BackgroundInfo = styled.div`
 
 export const InfoContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 17px;
 `
@@ -149,7 +161,7 @@ export const ContactButton = styled.button`
 
   gap: 10px;
 
-  width: 170px;
+  width: fit-content;
   height: 60px;
 
   cursor: pointer;

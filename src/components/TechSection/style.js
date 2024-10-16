@@ -18,11 +18,16 @@ export const TechMain = styled.div`
   width: 100%;
 
   background-color: #010101;
-  padding: 117px 0 53px 0;
+  padding: 117px 5px 53px 5px;
 
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 1015px) {
+    flex-wrap: wrap;
+    gap: 7px;
+  }
 
   div {
     display: flex;
@@ -35,5 +40,9 @@ export const TechMain = styled.div`
   h2 {
     font-size: 17px;
     animation: ${animationRight} 1s linear;
+
+    @media (max-width: 915px) {
+      font-size: 15px;
+    }
   }
 `

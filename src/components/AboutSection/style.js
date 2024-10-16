@@ -6,8 +6,10 @@ export const AboutContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  border: none;
+
   background-color: #010101;
-  padding: 26px;
+  padding: 26px 0;
 `
 
 export const About = styled.div`
@@ -44,9 +46,16 @@ export const AvatarSection = styled.div`
     border-radius: 50%;
 
     position: absolute;
-    margin: 0 0 -260px 240px;
+    margin: 0 0 -280px -150px;
 
     transition: all 0.3s ease-in-out;
+
+    @media (max-width: 1250px) {
+      margin: 0 0 -290px -120px;
+    }
+    @media (max-width: 925px) {
+      margin: 0 0 -320px -70px;
+    }
 
     &:hover {
       background-color: #828282;

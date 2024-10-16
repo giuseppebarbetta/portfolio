@@ -17,6 +17,10 @@ export const TitleStyle = styled.div`
     text-shadow: 5px 3px 2px rgba(40, 167, 69, 0.7);
 
     width: 620px;
+
+    @media (max-width: 1300px) {
+      padding-left: 26px;
+    }
   }
 
   div {

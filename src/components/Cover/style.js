@@ -33,7 +33,7 @@ export const Background = styled.div`
   justify-content: center;
   height: 75vh;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
 
   background: rgb(84, 212, 32);
@@ -63,10 +63,8 @@ export const Container = styled.div`
   align-items: start;
   position: relative;
 
-  width: 65vw;
-
   h1 {
-    font-size: 20px;
+    font-size: 1.25rem;
     padding-left: 10px;
     animation: ${animationLeft} 0.8s linear;
   }
@@ -87,7 +85,7 @@ export const FirstLine = styled.div`
   gap: 10px;
 
   h2 {
-    font-size: 125px;
+    font-size: 7.813rem;
     line-height: 90px;
     font-weight: bold;
     font-family: 'Archivo Black', sans-serif;
@@ -100,18 +98,17 @@ export const FirstLine = styled.div`
 export const SecondLine = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: start;
-
-  width: 65vw;
+  align-items: center;
 
   margin-bottom: 8px;
+  width: 100%;
 
   a {
     cursor: pointer;
   }
 
   h2 {
-    font-size: 125px;
+    font-size: 7.813rem;
     line-height: 100px;
     font-weight: bold;
     font-family: 'Archivo Black', sans-serif;
@@ -216,7 +213,7 @@ export const Belt = styled.div`
     transition: all 0.5s ease;
     padding-left: 35px;
 
-    font-size: 26px;
+    font-size: 1.625rem;
   }
 `
 

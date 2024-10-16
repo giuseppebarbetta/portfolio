@@ -10,7 +10,11 @@ const animationLeft = keyframes`
 `
 
 export const TechImg = styled.img`
-  height: ${(props) => props.size}px;
+  ${({ size }) =>
+    size &&
+    css`
+      height: ${size}px;
+    `}
   border-radius: 17px;
   transition: all 0.3s ease;
   ${({ animation }) =>
@@ -18,6 +22,10 @@ export const TechImg = styled.img`
     css`
       animation: ${animationLeft} 1s linear;
     `};
+
+  @media (max-width: 915px) {
+    height: calc(${(props) => props.size}px * 0.8);
+  }
 
   &:hover {
     ${({ animation }) =>
