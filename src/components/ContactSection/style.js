@@ -34,6 +34,16 @@ export const ContainerContact = styled.div`
   h4 {
     font-size: 35px;
     margin-bottom: 26px;
+
+    @media (max-width: 675px) {
+      margin: 26px 0;
+    }
+    @media (max-width: 595px) {
+      font-size: 26px;
+    }
+    @media (max-width: 435px) {
+      font-size: 22px;
+    }
   }
 
   .topBackground {
@@ -74,11 +84,13 @@ export const BackgroundInfo = styled.div`
   border-radius: 8px;
 
   @media (max-width: 1025px) {
-    width: 40vw;
+    width: 45vw;
   }
-
-  h4 {
-    font-size: 20px;
+  @media (max-width: 675px) {
+    height: 153px;
+  }
+  @media (max-width: 435px) {
+    width: 71vw;
   }
 
   .middleBackground {
@@ -137,6 +149,11 @@ export const InfoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 17px;
+
+  @media (max-width: 675px) {
+    flex-direction: column;
+    gap: 35px;
+  }
 `
 
 export const ContactIcons = styled.div`
@@ -148,6 +165,11 @@ export const ContactIcons = styled.div`
   padding-left: 26px;
 
   gap: 15px;
+
+  @media (max-width: 675px) {
+    flex-direction: row;
+    gap: 26px;
+  }
 `
 
 export const ContactButton = styled.button`
@@ -166,6 +188,10 @@ export const ContactButton = styled.button`
 
   cursor: pointer;
   transition: transform 0.3s ease;
+
+  @media (max-width: 675px) {
+    flex-direction: column;
+  }
 
   &:hover {
     transform: translate(10px, -10px);

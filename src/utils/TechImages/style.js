@@ -15,6 +15,15 @@ export const TechImg = styled.img`
     css`
       height: ${size}px;
     `}
+
+  @media(max-width: 435px) {
+    ${({ size }) =>
+      size &&
+      css`
+        height: calc(${size}px * 0.8);
+      `}
+  }
+
   border-radius: 17px;
   transition: all 0.3s ease;
   ${({ animation }) =>
@@ -22,10 +31,6 @@ export const TechImg = styled.img`
     css`
       animation: ${animationLeft} 1s linear;
     `};
-
-  @media (max-width: 915px) {
-    height: calc(${(props) => props.size}px * 0.8);
-  }
 
   &:hover {
     ${({ animation }) =>

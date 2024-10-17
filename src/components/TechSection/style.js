@@ -24,9 +24,16 @@ export const TechMain = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media (max-width: 1015px) {
+  @media (max-width: 915px) {
     flex-wrap: wrap;
-    gap: 7px;
+    gap: 26px;
+    padding: 120px 10px 53px 10px;
+  }
+  @media (max-width: 675px) {
+    gap: 35px;
+  }
+  @media (max-width: 435px) {
+    gap: 8px;
   }
 
   div {

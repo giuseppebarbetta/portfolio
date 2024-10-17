@@ -61,6 +61,17 @@ export const ProjectCard = styled.div`
     -moz-box-shadow: 10px 10px 16px -4px rgba(225, 225, 225, 0.75);
     transform: translateX(10px);
   }
+
+  @media (max-width: 655px) {
+    flex-direction: column;
+    width: 450px;
+    height: 100%;
+  }
+  @media (max-width: 455px) {
+    flex-direction: column;
+    width: 350px;
+    height: 100%;
+  }
 `
 
 export const ImageSection = styled.div`
@@ -80,6 +91,11 @@ export const DetailsSection = styled.div`
   align-items: baseline;
   gap: 17px;
 
+  @media (max-width: 655px) {
+    justify-content: center;
+    align-items: center;
+  }
+
   h3 {
     font-size: 22px;
   }
@@ -93,6 +109,15 @@ export const TextSection = styled.div`
   gap: 10px;
 
   width: 100%;
+
+  @media (max-width: 655px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    p {
+      width: 90%;
+    }
+  }
 `
 
 export const ButtonSection = styled.div`

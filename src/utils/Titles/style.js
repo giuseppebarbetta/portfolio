@@ -10,6 +10,11 @@ export const TitleStyle = styled.div`
   align-items: center;
   gap: 26px;
 
+  @media (max-width: 435px) {
+    flex-direction: column;
+    width: 300px;
+  }
+
   h1 {
     color: #fefefe;
     font-size: 35px;
@@ -21,9 +26,17 @@ export const TitleStyle = styled.div`
     @media (max-width: 1300px) {
       padding-left: 26px;
     }
+    @media (max-width: 435px) {
+      width: fit-content;
+      padding: 0;
+    }
   }
 
   div {
     width: 620px;
+
+    @media (max-width: 435px) {
+      width: 300px;
+    }
   }
 `

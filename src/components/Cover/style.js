@@ -44,6 +44,10 @@ export const Background = styled.div`
   );
   position: relative;
 
+  @media (max-width: 825px) {
+    height: 62vh;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -64,7 +68,7 @@ export const Container = styled.div`
   position: relative;
 
   h1 {
-    font-size: 1.25rem;
+    font-size: 20px;
     padding-left: 10px;
     animation: ${animationLeft} 0.8s linear;
   }
@@ -75,6 +79,8 @@ export const ContainerIcons = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  width: fit-content;
 `
 
 export const FirstLine = styled.div`
@@ -85,13 +91,26 @@ export const FirstLine = styled.div`
   gap: 10px;
 
   h2 {
-    font-size: 7.813rem;
+    font-size: 125px;
     line-height: 90px;
     font-weight: bold;
     font-family: 'Archivo Black', sans-serif;
     font-weight: 400;
 
     margin-right: 17px;
+
+    @media (max-width: 1285px) {
+      font-size: 100px;
+      line-height: 80px;
+    }
+    @media (max-width: 1025px) {
+      font-size: 80px;
+      line-height: 62px;
+    }
+    @media (max-width: 825px) {
+      font-size: 62px;
+      line-height: 45px;
+    }
   }
 `
 
@@ -108,11 +127,24 @@ export const SecondLine = styled.div`
   }
 
   h2 {
-    font-size: 7.813rem;
+    font-size: 125px;
     line-height: 100px;
     font-weight: bold;
     font-family: 'Archivo Black', sans-serif;
     font-weight: 400;
+
+    @media (max-width: 1285px) {
+      font-size: 100px;
+      line-height: 80px;
+    }
+    @media (max-width: 1025px) {
+      font-size: 80px;
+      line-height: 62px;
+    }
+    @media (max-width: 825px) {
+      font-size: 62px;
+      line-height: 45px;
+    }
   }
 `
 
@@ -125,6 +157,10 @@ export const ThirdLine = styled.div`
   color: #fefefe;
 
   width: 100%;
+
+  @media (max-width: 825px) {
+    font-size: 14px;
+  }
 `
 
 export const Button = styled.button`

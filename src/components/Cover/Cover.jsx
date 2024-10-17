@@ -46,9 +46,9 @@ export function Cover() {
           </FirstLine>
           <SecondLine>
             <ContainerIcons>
-              <GitHubIcon animation size={100} />
-              <LinkedInIcon animation size={100} />
-              <CvIcon animation size={100} />
+              <GitHubIcon animation size={100} responsive />
+              <LinkedInIcon animation size={100} responsive />
+              <CvIcon animation size={100} responsive />
             </ContainerIcons>
             <h2>FRONTEND</h2>
           </SecondLine>

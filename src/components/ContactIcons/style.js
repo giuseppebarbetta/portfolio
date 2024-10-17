@@ -8,6 +8,18 @@ export const CvStyles = styled(ArticleIcon)`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
+  ${({ responsive, size }) =>
+    responsive &&
+    css`
+      @media (max-width: 1025px) {
+        font-size: calc(${size}px * 0.8);
+      }
+
+      @media (max-width: 825px) {
+        font-size: calc(${size}px * 0.6);
+      }
+    `}
+
   &:hover {
     ${({ animation }) =>
       animation &&
@@ -22,6 +34,18 @@ export const LinkedinStyles = styled(LinkedInIcon)`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
+  ${({ responsive, size }) =>
+    responsive &&
+    css`
+      @media (max-width: 1025px) {
+        font-size: calc(${size}px * 0.8);
+      }
+
+      @media (max-width: 825px) {
+        font-size: calc(${size}px * 0.6);
+      }
+    `}
+
   &:hover {
     ${({ animation }) =>
       animation &&
@@ -35,6 +59,18 @@ export const GithubStyles = styled(GitHubIcon)`
   font-size: ${(props) => props.size}px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  ${({ responsive, size }) =>
+    responsive &&
+    css`
+      @media (max-width: 1025px) {
+        font-size: calc(${size}px * 0.8);
+      }
+
+      @media (max-width: 825px) {
+        font-size: calc(${size}px * 0.6);
+      }
+    `}
 
   &:hover {
     ${({ animation }) =>
