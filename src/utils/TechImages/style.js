@@ -16,7 +16,31 @@ export const TechImg = styled.img`
       height: ${size}px;
     `}
 
-  @media(max-width: 435px) {
+  @media(max-width: 915px) {
+    ${({ size }) =>
+      size &&
+      css`
+        height: calc(${size}px * 1.6);
+      `}
+  }
+
+  @media (max-width: 745px) {
+    ${({ size }) =>
+      size &&
+      css`
+        height: calc(${size}px * 1.3);
+      `}
+  }
+
+  @media (max-width: 625px) {
+    ${({ size }) =>
+      size &&
+      css`
+        height: calc(${size}px * 1);
+      `}
+  }
+
+  @media (max-width: 455px) {
     ${({ size }) =>
       size &&
       css`

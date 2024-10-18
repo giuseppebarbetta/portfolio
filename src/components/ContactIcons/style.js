@@ -4,7 +4,13 @@ import ArticleIcon from '@mui/icons-material/Article'
 import styled, { css } from 'styled-components'
 
 export const CvStyles = styled(ArticleIcon)`
-  font-size: ${(props) => props.size}px;
+  a {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  width: ${(props) => props.size}px;
+  height: fit-content;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
@@ -12,11 +18,15 @@ export const CvStyles = styled(ArticleIcon)`
     responsive &&
     css`
       @media (max-width: 1025px) {
-        font-size: calc(${size}px * 0.8);
+        width: calc(${size}px * 0.8);
       }
 
       @media (max-width: 825px) {
-        font-size: calc(${size}px * 0.6);
+        width: calc(${size}px * 0.6);
+      }
+
+      @media (max-width: 435px) {
+        width: calc(${size}px * 0.3);
       }
     `}
 
@@ -31,6 +41,7 @@ export const CvStyles = styled(ArticleIcon)`
 
 export const LinkedinStyles = styled(LinkedInIcon)`
   font-size: ${(props) => props.size}px;
+  height: fit-content;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
@@ -43,6 +54,10 @@ export const LinkedinStyles = styled(LinkedInIcon)`
 
       @media (max-width: 825px) {
         font-size: calc(${size}px * 0.6);
+      }
+
+      @media (max-width: 435px) {
+        font-size: calc(${size}px * 0.3);
       }
     `}
 
@@ -57,6 +72,7 @@ export const LinkedinStyles = styled(LinkedInIcon)`
 
 export const GithubStyles = styled(GitHubIcon)`
   font-size: ${(props) => props.size}px;
+  height: fit-content;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
@@ -69,6 +85,10 @@ export const GithubStyles = styled(GitHubIcon)`
 
       @media (max-width: 825px) {
         font-size: calc(${size}px * 0.6);
+      }
+
+      @media (max-width: 435px) {
+        font-size: calc(${size}px * 0.3);
       }
     `}
 

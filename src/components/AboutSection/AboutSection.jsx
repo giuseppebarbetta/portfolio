@@ -54,7 +54,13 @@ export function AboutSection() {
         </AboutSkillSection>
         <AvatarSection>
           <img src={Avatar} alt="foto de perfil" />
-          <button>Contrate</button>
+          <button
+            onClick={() =>
+              window.open('https://wa.me/5511989290225', '_blanck')
+            }
+          >
+            Contrate
+          </button>
         </AvatarSection>
       </About>
     </AboutContainer>

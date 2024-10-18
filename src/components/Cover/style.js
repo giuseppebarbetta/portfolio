@@ -33,19 +33,36 @@ export const Background = styled.div`
   justify-content: center;
   height: 75vh;
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
 
   background: rgb(84, 212, 32);
   background: radial-gradient(
     circle,
-    rgba(84, 212, 32, 0.8015581232492998) 0%,
+    rgba(84, 212, 32, 0.8015581232492998) 26%,
     rgba(130, 130, 130, 1) 53%
   );
   position: relative;
 
+  @media (max-width: 1025px) {
+    background: rgb(84, 212, 32);
+    background: radial-gradient(
+      circle,
+      rgba(84, 212, 32, 1) 26%,
+      rgba(130, 130, 130, 1) 70%
+    );
+  }
   @media (max-width: 825px) {
     height: 62vh;
+  }
+  @media (max-width: 435px) {
+    height: 53vh;
+    background: rgb(84, 212, 32);
+    background: radial-gradient(
+      circle,
+      rgba(84, 212, 32, 1) 26%,
+      rgba(130, 130, 130, 1) 80%
+    );
   }
 
   &::after {
@@ -57,6 +74,10 @@ export const Background = styled.div`
     height: 260px;
 
     background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+
+    @media (max-width: 435px) {
+      height: 170px;
+    }
   }
 `
 
@@ -71,6 +92,16 @@ export const Container = styled.div`
     font-size: 20px;
     padding-left: 10px;
     animation: ${animationLeft} 0.8s linear;
+
+    @media (max-width: 435px) {
+      font-size: 15px;
+      line-height: 15px;
+      padding-left: 0;
+    }
+    @media (max-width: 435px) {
+      font-size: 12px;
+      line-height: 12px;
+    }
   }
 `
 
@@ -81,6 +112,8 @@ export const ContainerIcons = styled.div`
   align-items: center;
 
   width: fit-content;
+  padding: 0;
+  margin: 0;
 `
 
 export const FirstLine = styled.div`
@@ -111,6 +144,14 @@ export const FirstLine = styled.div`
       font-size: 62px;
       line-height: 45px;
     }
+    @media (max-width: 435px) {
+      font-size: 35px;
+      line-height: 26px;
+    }
+    @media (max-width: 435px) {
+      font-size: 30px;
+      line-height: 26px;
+    }
   }
 `
 
@@ -121,6 +162,10 @@ export const SecondLine = styled.div`
 
   margin-bottom: 8px;
   width: 100%;
+
+  @media (max-width: 435px) {
+    margin-bottom: 5px;
+  }
 
   a {
     cursor: pointer;
@@ -145,6 +190,14 @@ export const SecondLine = styled.div`
       font-size: 62px;
       line-height: 45px;
     }
+    @media (max-width: 435px) {
+      font-size: 35px;
+      line-height: 26px;
+    }
+    @media (max-width: 435px) {
+      font-size: 30px;
+      line-height: 26px;
+    }
   }
 `
 
@@ -160,6 +213,16 @@ export const ThirdLine = styled.div`
 
   @media (max-width: 825px) {
     font-size: 14px;
+  }
+  @media (max-width: 435px) {
+    font-size: 10px;
+    line-height: 10px;
+    margin-top: -5px;
+  }
+  @media (max-width: 365px) {
+    font-size: 8px;
+    line-height: 8px;
+    margin-top: -5px;
   }
 `
 
@@ -229,7 +292,8 @@ export const Belt = styled.div`
   align-items: center;
 
   width: max-content;
-  max-width: 99vw;
+  max-width: 100%;
+  white-space: nowrap;
   height: 40px;
   overflow: hidden;
 
@@ -237,7 +301,6 @@ export const Belt = styled.div`
   backdrop-filter: blur(10px);
   filter: blur(1px);
 
-  white-space: nowrap;
   transform: rotate(-1.5deg);
   transform-origin: left center;
   margin-top: 26px;
@@ -249,7 +312,7 @@ export const Belt = styled.div`
     transition: all 0.5s ease;
     padding-left: 35px;
 
-    font-size: 1.625rem;
+    font-size: 26px;
   }
 `
 
@@ -258,7 +321,8 @@ export const BackBelt = styled.div`
   align-items: center;
 
   width: max-content;
-  max-width: 99vw;
+  max-width: 99.8%;
+  white-space: nowrap;
   height: 35px;
   overflow: hidden;
 
@@ -268,7 +332,6 @@ export const BackBelt = styled.div`
   opacity: 70%;
   border: none;
 
-  white-space: nowrap;
   transform: rotate(1.5deg);
   transform-origin: right center;
   margin-top: 53px;

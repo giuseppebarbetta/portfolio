@@ -17,7 +17,7 @@ import { useState } from 'react'
 import { CvIcon, GitHubIcon, LinkedInIcon } from '../ContactIcons/ContactIcons'
 
 export function Cover() {
-  const techArray = Array(20).fill('<Tecnologias />')
+  const techArray = Array(15).fill('<Tecnologias />')
 
   const [buttonText, setButtonText] = useState('CONTRATE')
 
@@ -25,6 +25,7 @@ export function Cover() {
     <>
       {/* Componente principal que é a capa */}
       <Button
+        onClick={() => window.open('https://wa.me/5511989290225', '_blanck')}
         onMouseEnter={() =>
           setButtonText(
             <span>
@@ -56,9 +57,8 @@ export function Cover() {
             <p>Tenho 29 anos e estou como desenvolvedor frontend freelancer</p>
             <p>
               com experiência de 10 meses desenvolvendo projetos e resolvendo
-              problemas
             </p>
-            <p>através da tecnologia</p>
+            <p>problemas através da tecnologia</p>
           </ThirdLine>
         </Container>
       </Background>

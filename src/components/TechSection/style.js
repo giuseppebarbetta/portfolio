@@ -26,11 +26,14 @@ export const TechMain = styled.div`
 
   @media (max-width: 915px) {
     flex-wrap: wrap;
-    gap: 26px;
+    gap: 35px;
     padding: 120px 10px 53px 10px;
   }
   @media (max-width: 675px) {
     gap: 35px;
+  }
+  @media (max-width: 530px) {
+    gap: 17px;
   }
   @media (max-width: 435px) {
     gap: 8px;
